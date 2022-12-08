@@ -140,6 +140,11 @@ main {
     padding: 20px 15px;
 }
 
+main p {
+    color: grey;
+    margin-top: 5px;
+}
+
 .articles {
     grid-row: 1 / span 2;
     display: flex;
