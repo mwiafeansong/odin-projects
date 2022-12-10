@@ -130,7 +130,6 @@ aside .logo svg {
 }
 
 main {
-    /* background-color: #c7d2fe; */
     background-color: #e0e7ff;
     grid-column: 2 / 3;
     display: grid;
@@ -227,4 +226,45 @@ footer a {
 
 footer a:hover {
     text-decoration: underline;
+}
+
+@media screen and (max-width: 680px) {
+    .search {
+        flex-direction:column-reverse;
+        border-bottom: 1px solid #bbb;
+    }
+
+    .search, .intro-menu {
+        align-items: center;
+        gap: 20px;
+    }
+
+    .intro-menu {
+        flex-direction: column;
+    }
+
+    .search div:first-child {
+        margin-bottom: 20px;
+    }
+
+    .intro-menu div:first-child {
+        align-self: flex-start;
+    }
+
+    .buttons {
+        align-self: flex-end;
+    }
+
+    main {
+        grid-template-columns: 1fr;
+    }
+
+    .announcements, .trends {
+        grid-column: 1;
+    }
+
+    .announcements h3,
+    .trends h3 {
+        margin: 20px 0 5px 0;
+    }
 }
