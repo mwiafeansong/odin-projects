@@ -234,6 +234,10 @@ footer a:hover {
         border-bottom: 1px solid #bbb;
     }
 
+    .search input {
+        width: 50vw;
+    }
+
     .search, .intro-menu {
         align-items: center;
         gap: 20px;
