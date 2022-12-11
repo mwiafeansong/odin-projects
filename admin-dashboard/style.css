@@ -41,7 +41,7 @@ header .search {
 }
 
 .search input {
-    width: 200px;
+    width: 30vw;
     height: 22px;
     background-color: #e0e7ff;
     border: none;
