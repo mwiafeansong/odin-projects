@@ -4,15 +4,14 @@ const addBookBtn = document.querySelector('.add-button');
 const closeFormBtn = document.querySelector('.close-button');
 const formBtn = document.querySelector('.form-button');
 
-const bookTitle = document.querySelector('#title');
-const bookAuthor = document.querySelector('#author');
-const bookPages = document.querySelector('#num-pages');
-const bookReadStatus = document.querySelectorAll('#read-status');
-
+const title = document.querySelector('#title');
+const author = document.querySelector('#author');
+const pages = document.querySelector('#num-pages');
 const readChoices = document.getElementsByName('hasRead');
-
-let book;
-let readChoice;
+const readBook = document.querySelector('#read');
+const notReadBook = document.querySelector('#not-read');
+const requiredField = document.querySelector('.required');
+ 
 
 let myLibrary = [];
 
@@ -65,12 +64,7 @@ Book.prototype.addBookToShelf = function() {
         newBook.appendChild(readStatus);
 }
 
-function createBook() {
-    title = document.querySelector('#title');
-    author = document.querySelector('#author');
-    pages = document.querySelector('#num-pages');
-
-    
+function createBook() { 
     for (const choice of readChoices) {
         if (choice.checked) {
             readChoice = choice.value;
@@ -80,6 +74,12 @@ function createBook() {
     book = new Book(title.value, author.value, pages.value.toString(), readChoice);
     book.addBookToLibrary();
     book.addBookToShelf();
+}
+
+function showBooks() {
+    for (const book of myLibrary) {
+        book.addBookToShelf();
+    }
 }
 
 function showForm() {
@@ -96,9 +96,14 @@ function removeForm() {
     }
 }
 
-function showBooks() {
-    for (const book of myLibrary) {
-        book.addBookToShelf();
+function clearInputs() {
+    title.value = '';
+    author.value = '';
+    pages.value = '';
+    for (const choice of readChoices) {
+        if (choice.checked) {
+            choice.checked = false;
+        }
     }
 }
 
@@ -115,8 +120,17 @@ addBookBtn.addEventListener('click', showForm);
 closeFormBtn.addEventListener('click', removeForm);
 formBtn.addEventListener('click', (event) => {
     event.preventDefault();
-    createBook();
+    if (title.value !== '' && author.value !== '' && ((!readBook.checked &&notReadBook.checked) || (readBook.checked && !notReadBook.checked))) {
+        createBook();
+        clearInputs();
+        requiredField.textContent = '* Input required';
+        requiredField.style.color = 'black';
+    } else {
+        requiredField.textContent = 'Input needed in required fields';
+        requiredField.style.color = 'red';
+    }    
 });
+
 
 
 

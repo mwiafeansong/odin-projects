@@ -21,24 +21,25 @@
             <section class="content">
                 <form class="invisible" action="#">
                     <button aria-label="Close" class="close-button" type="button">X</button>
-                    <label for="title">Title: 
+                    <label for="title">*Title: 
                         <input type="text" id="title" name="title">
                     </label>
-                    <label>Author:
+                    <label>*Author:
                         <input type="text" id="author" name="author">
                     </label>
                     <label>Number of pages:
                         <input type="number" id="num-pages" name="pages" min="1">
                     </label>
-                    <label class="read-status">Have you read the book?
+                    <label class="read-status">Have you read the book?*
                         <div class="has-read">
-                            <input class="status" type="radio" id="read-status" name="hasRead" value="Yes">
+                            <input class="status" type="radio" id="read" name="hasRead" value="Yes">
                             Yes
-                            <input class="status" type="radio" id="read-status" name="hasRead" value="No">
+                            <input class="status" type="radio" id="not-read" name="hasRead" value="No">
                             No
                         </div>
                     </label>
                     <button class="form-button" type="submit">Add</button>
+                    <p class="required">* Input required</p>
                 </form>
                 <div class="library"></div>
             </section>
