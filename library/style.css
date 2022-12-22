@@ -1,0 +1,183 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    background-color: #203354;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container {
+    width: 80%;
+}
+
+main h1 {
+    margin-top: 10px;
+    background-color: rgb(21, 34, 56);
+    padding: 8px 0;
+}
+
+main h1, main p {
+    margin-bottom: 7px;
+}
+
+main .add-button {
+    background: #fff;
+    padding: 6px 50px 4px 50px;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: 12px;
+    border: none;
+    border-radius: 20px;
+}
+
+.add-button svg {
+    width: 20px;
+    margin-top: 1px;
+}
+
+.add-button p {
+    float: right;
+    margin-left: 5px;
+}
+
+.add-button:hover {
+    cursor: pointer;
+}
+
+.add-button:active {
+    transform: scale(1.1, 1.1);
+}
+
+.content {
+    position: relative;   
+}
+
+.library {
+    margin: 20px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+form {
+    position: absolute;
+    display: inline-block;
+    transform: translate(-50%, 0%);
+    background-color: rgb(255, 255, 255);
+    color:#203354;
+    padding: 20px;
+}
+
+.close-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 2px 8px;
+    border: none;
+}
+
+.close-button:hover {
+    background-color: red;
+}
+
+form label {
+    display: block;
+}
+
+form input {
+    margin-bottom: 20px;
+    border: 1px solid #203354;
+}
+
+form input:not(.status) {
+    display: block;
+    width: 260px;
+    height: 30px;
+    padding: 0px 5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1em;
+}
+
+.status {
+    margin-left: 20px;
+    margin-top: 5px;
+} 
+
+.has-read {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.form-button {
+    color:#fff;
+    background-color: #203354;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 7px 50px;
+    font-size: 1em;
+    border: none;
+    border-radius: 10px;
+}
+
+.invisible {
+    opacity: 0;
+}
+
+.visible {
+    opacity: 0.95;
+}
+
+.book {
+    /* background-color: #152238; */
+    background-color: rgb(21, 34, 56, 0.7);
+    padding: 10px;
+}
+
+.title {
+    font-style: italic;
+}
+
+.pages {
+    margin-top: 25px;
+}
+
+.read, .not-read {
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 2px;
+}
+
+.read {
+    color: #39ff14;
+}
+
+.not-read {
+    color: red;
+}
+
+footer {
+    font-size: 0.75em;
+}
+
+footer a {
+    color:rgb(0, 225, 255);
+    text-decoration: none;
+}
+
+footer a:hover{
+    text-decoration: underline;
+}
+
+
+
