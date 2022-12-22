@@ -94,6 +94,8 @@ function removeForm() {
         form.classList.add('invisible');
         form.classList.remove('visible');
     }
+
+    requiredWarningBefore();
 }
 
 function clearInputs() {
@@ -105,6 +107,16 @@ function clearInputs() {
             choice.checked = false;
         }
     }
+}
+
+function requiredWarningBefore() {
+    requiredField.textContent = '* required field';
+    requiredField.style.color = 'black';
+}
+
+function requiredWarningAfter() {
+    requiredField.textContent = '* Input needed in required fields';
+    requiredField.style.color = 'red';
 }
 
 const book1 = new Book('Harry Potter', 'JK Rowling', 400, 'No');
@@ -120,14 +132,12 @@ addBookBtn.addEventListener('click', showForm);
 closeFormBtn.addEventListener('click', removeForm);
 formBtn.addEventListener('click', (event) => {
     event.preventDefault();
-    if (title.value !== '' && author.value !== '' && ((!readBook.checked &&notReadBook.checked) || (readBook.checked && !notReadBook.checked))) {
+    if (title.value !== '' && author.value !== '' && ((!readBook.checked && notReadBook.checked) || (readBook.checked && !notReadBook.checked))) {
         createBook();
         clearInputs();
-        requiredField.textContent = '* Input required';
-        requiredField.style.color = 'black';
+        requiredWarningBefore();
     } else {
-        requiredField.textContent = 'Input needed in required fields';
-        requiredField.style.color = 'red';
+        requiredWarningAfter();
     }    
 });
 

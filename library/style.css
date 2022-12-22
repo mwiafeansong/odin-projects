@@ -85,6 +85,7 @@ form {
     right: 0;
     padding: 2px 8px;
     border: none;
+    font-weight: bold;
 }
 
 .close-button:hover {
