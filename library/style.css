@@ -138,12 +138,12 @@ form input:not(.status) {
 
 .invisible {
     opacity: 0;
+    pointer-events: none;
 }
 
 .visible {
     opacity: 1;
     z-index: 2;
-    pointer-events: none;
 }
 
 .book {
