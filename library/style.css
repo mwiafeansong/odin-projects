@@ -51,10 +51,6 @@ main .add-button {
     margin-left: 5px;
 }
 
-.add-button:hover {
-    cursor: pointer;
-}
-
 .add-button:active {
     transform: scale(1.1, 1.1);
 }
@@ -146,6 +142,7 @@ form input:not(.status) {
 
 .visible {
     opacity: 0.95;
+    z-index: 2;
 }
 
 .book {
@@ -158,8 +155,12 @@ form input:not(.status) {
     font-style: italic;
 }
 
+.author-name {
+    display: block;
+}
+
 .pages {
-    margin-top: 25px;
+    margin-top: 15px;
 }
 
 .read, .not-read {
@@ -174,6 +175,35 @@ form input:not(.status) {
 
 .not-read {
     color: red;
+}
+
+.book-btns {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+.change-status, .delete-book {
+    background-color: transparent;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: 1px solid #fff;
+    padding: 6px 10px;
+    font-weight: 600;
+    border-radius: 7px;
+    font-size: 0.85rem;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+}
+
+.change-status {
+    margin-left: 0px;
+    margin-right: auto;
+}
+
+.change-status:hover, .delete-book:hover {
+    background-color: #fff;
+    color:#203354;
 }
 
 footer {
