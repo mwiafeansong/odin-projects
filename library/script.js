@@ -2,6 +2,7 @@ const library = document.querySelector('.library');
 const form = document.querySelector('form');
 const addBookBtn = document.querySelector('.add-button');
 const closeFormBtn = document.querySelector('.close-button');
+const backDrop = document.querySelector('.backdrop');
 
 const title = document.querySelector('#title');
 const author = document.querySelector('#author');
@@ -106,6 +107,8 @@ function showForm() {
         form.classList.add('visible');
         form.classList.remove('invisible');
     }
+
+    backDrop.classList.add('show');
 }
 
 function removeForm() {
@@ -113,6 +116,8 @@ function removeForm() {
         form.classList.add('invisible');
         form.classList.remove('visible');
     }
+
+    backDrop.classList.remove('show');
 
     requiredWarningBefore();
 }
@@ -201,7 +206,10 @@ book3.addBookToLibrary();
 showBooks();
 addBookBtn.addEventListener('click', showForm);
 closeFormBtn.addEventListener('click', removeForm);
-form.addEventListener('submit', displayBookFromForm)
+form.addEventListener('submit', (e) => {
+    displayBookFromForm(e);
+    removeForm();
+})
 library.addEventListener('click', (e) => {
     removeBook(e);
     changeReadStatus(e);

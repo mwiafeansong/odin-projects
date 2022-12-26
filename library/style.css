@@ -66,13 +66,38 @@ main .add-button {
     gap: 20px;
 }
 
+.backdrop {
+    background-color: #000;
+    inset: 0;
+    position: fixed;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.backdrop.show {
+    opacity: 0.6;
+}
+
 form {
     position: absolute;
     display: inline-block;
-    transform: translate(-50%, 0%);
+    transform: translate(-50%, -100%);
     background-color: rgb(255, 255, 255);
     color:#203354;
     padding: 20px 20px;
+    transition: transform .3s ease-in-out, opacity .4s ease;
+}
+
+.invisible {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.visible {
+    opacity: 1;
+    z-index: 2;
+    transform: translate(-50%, -40%);
 }
 
 .close-button {
@@ -136,16 +161,6 @@ form input:not(.status) {
     color: #000;
 }
 
-.invisible {
-    opacity: 0;
-    pointer-events: none;
-}
-
-.visible {
-    opacity: 1;
-    z-index: 2;
-}
-
 .book {
     /* background-color: #152238; */
     background-color: rgb(21, 34, 56, 0.7);
@@ -194,7 +209,6 @@ form input:not(.status) {
     font-size: 0.85rem;
     color: #fff;
     position: relative;
-    z-index: 1;
 }
 
 .change-status {
@@ -209,6 +223,7 @@ form input:not(.status) {
 
 footer {
     font-size: 0.75em;
+    margin-top: 40px;
 }
 
 footer a {
