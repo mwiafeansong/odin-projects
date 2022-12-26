@@ -13,6 +13,7 @@ const notReadBook = document.querySelector('#not-read');
 const requiredField = document.querySelector('.required');
  
 let myLibrary = [];
+let bookCreated = false;
 
 function Book(title, author, pages, hasRead) {
     this.title = title;
@@ -149,6 +150,7 @@ function displayBookFromForm(e) {
         displayBook();
         clearInputs();
         requiredWarningBefore();
+        bookCreated = true;
     } else {
         requiredWarningAfter();
     }   
@@ -208,7 +210,9 @@ addBookBtn.addEventListener('click', showForm);
 closeFormBtn.addEventListener('click', removeForm);
 form.addEventListener('submit', (e) => {
     displayBookFromForm(e);
-    removeForm();
+    if (bookCreated) {
+        removeForm();
+    }
 })
 library.addEventListener('click', (e) => {
     removeBook(e);
