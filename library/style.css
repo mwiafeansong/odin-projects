@@ -141,8 +141,9 @@ form input:not(.status) {
 }
 
 .visible {
-    opacity: 0.95;
+    opacity: 1;
     z-index: 2;
+    pointer-events: none;
 }
 
 .book {
@@ -201,7 +202,7 @@ form input:not(.status) {
     margin-right: auto;
 }
 
-.change-status:hover, .delete-book:hover {
+.change-status:active, .delete-book:active {
     background-color: #fff;
     color:#203354;
 }

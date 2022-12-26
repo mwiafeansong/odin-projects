@@ -190,11 +190,9 @@ function changeReadStatus(e) {
     }
 }
 
-
-
 const book1 = new Book('Harry Potter', 'JK Rowling', 400, 'No');
 const book2 = new Book('The Maze Runner', 'James Dashner', 375, 'Yes');
-const book3 = new Book('Tell me your dreams', 'Sydney Sheldon', 200, 'No');
+const book3 = new Book('Tell Me Your Dreams', 'Sydney Sheldon', 400, 'Yes');
 
 book1.addBookToLibrary();
 book2.addBookToLibrary();
