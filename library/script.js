@@ -73,7 +73,6 @@ Book.prototype.createBook = function() {
         changeBookStatusBtn = document.createElement('button');
         changeBookStatusBtn.setAttribute('data-id', myLibrary.indexOf(this));
         changeBookStatusBtn.className = 'change-status';
-        changeBookStatusBtn.id = this.title;
         changeBookStatusBtn.textContent = 'Change Status';
         bookBtns.appendChild(changeBookStatusBtn);
 
@@ -166,6 +165,7 @@ function removeBook(e) {
             if (parseInt(dataId) === myLibrary.indexOf(book)) {
                 myLibrary.splice(parseInt(dataId), 1);
                 console.log(myLibrary);
+                break;
             }
         }
     } 
@@ -210,7 +210,6 @@ library.addEventListener('click', (e) => {
     removeBook(e);
     changeReadStatus(e);
 })
-
 
 
 
