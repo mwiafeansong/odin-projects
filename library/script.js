@@ -27,62 +27,61 @@ Book.prototype.addBookToLibrary = function() {
 }
 
 Book.prototype.createBook = function() {
-        newBook = document.createElement('article');
-        newBook.setAttribute('data-id', myLibrary.indexOf(this));
-        newBook.className = 'book';
-        library.appendChild(newBook);
+    newBook = document.createElement('article');
+    newBook.setAttribute('data-id', myLibrary.indexOf(this));
+    newBook.className = 'book';
+    library.appendChild(newBook);
 
-        newTitle = document.createElement('h3');
-        newTitle.setAttribute('data-id', myLibrary.indexOf(this));
-        newTitle.className = 'title';
-        newTitle.innerHTML = this.title;
-        newBook.appendChild(newTitle);
+    newTitle = document.createElement('h3');
+    newTitle.setAttribute('data-id', myLibrary.indexOf(this));
+    newTitle.className = 'title';
+    newTitle.innerHTML = this.title;
+    newBook.appendChild(newTitle);
 
-        newAuthor = document.createElement('p');
-        newAuthor.setAttribute('data-id', myLibrary.indexOf(this));
-        newAuthor.className = 'author';
-        newAuthor.innerHTML = `by <span class="author-name">${this.author}</span>`;
-        newBook.appendChild(newAuthor);
+    newAuthor = document.createElement('p');
+    newAuthor.setAttribute('data-id', myLibrary.indexOf(this));
+    newAuthor.className = 'author';
+    newAuthor.innerHTML = `by <span class="author-name">${this.author}</span>`;
+    newBook.appendChild(newAuthor);
 
-        newPages = document.createElement('p');
-        newPages.setAttribute('data-id', myLibrary.indexOf(this));
-        newPages.className = 'pages';
-        newPages.innerHTML = `Number of pages: ${this.pages}`;
-        newBook.appendChild(newPages);
+    newPages = document.createElement('p');
+    newPages.setAttribute('data-id', myLibrary.indexOf(this));
+    newPages.className = 'pages';
+    newPages.innerHTML = `Number of pages: ${this.pages}`;
+    newBook.appendChild(newPages);
 
-        readStatus = document.createElement('p');
-        readStatus.setAttribute('data-id', myLibrary.indexOf(this));
-        spanStatus = document.createElement('span');
-        spanStatus.setAttribute('data-id', myLibrary.indexOf(this));
-        readStatus.textContent = 'Status: ';
-        if (this.hasRead === 'Yes') {
-            spanStatus.className = 'read';
-            spanStatus.textContent = 'read';
-        } else if (this.hasRead === 'No') {
-            spanStatus.className = 'not-read';
-            spanStatus.textContent = 'not read';
-        }
-        readStatus.appendChild(spanStatus);
-        newBook.appendChild(readStatus);
+    readStatus = document.createElement('p');
+    readStatus.setAttribute('data-id', myLibrary.indexOf(this));
+    spanStatus = document.createElement('span');
+    spanStatus.setAttribute('data-id', myLibrary.indexOf(this));
+    readStatus.textContent = 'Status: ';
+    if (this.hasRead === 'Yes') {
+        spanStatus.className = 'read';
+        spanStatus.textContent = 'read';
+    } else if (this.hasRead === 'No') {
+        spanStatus.className = 'not-read';
+        spanStatus.textContent = 'not read';
+    }
+    readStatus.appendChild(spanStatus);
+    newBook.appendChild(readStatus);
 
-        bookBtns = document.createElement('div');
-        bookBtns.setAttribute('data-id', myLibrary.indexOf(this));
-        bookBtns.className = 'book-btns';
-        newBook.appendChild(bookBtns);
+    bookBtns = document.createElement('div');
+    bookBtns.setAttribute('data-id', myLibrary.indexOf(this));
+    bookBtns.className = 'book-btns';
+    newBook.appendChild(bookBtns);
 
-        changeBookStatusBtn = document.createElement('button');
-        changeBookStatusBtn.setAttribute('data-id', myLibrary.indexOf(this));
-        changeBookStatusBtn.className = 'change-status';
-        changeBookStatusBtn.textContent = 'Change Status';
-        bookBtns.appendChild(changeBookStatusBtn);
+    changeBookStatusBtn = document.createElement('button');
+    changeBookStatusBtn.setAttribute('data-id', myLibrary.indexOf(this));
+    changeBookStatusBtn.className = 'change-status';
+    changeBookStatusBtn.textContent = 'Change Status';
+    bookBtns.appendChild(changeBookStatusBtn);
 
-        deleteBookBtn = document.createElement('button');
-        deleteBookBtn.setAttribute('data-id', myLibrary.indexOf(this));
-        deleteBookBtn.className = 'delete-book';
-        deleteBookBtn.textContent = 'Delete';
-        bookBtns.appendChild(deleteBookBtn);
+    deleteBookBtn = document.createElement('button');
+    deleteBookBtn.setAttribute('data-id', myLibrary.indexOf(this));
+    deleteBookBtn.className = 'delete-book';
+    deleteBookBtn.textContent = 'Delete';
+    bookBtns.appendChild(deleteBookBtn);
 }
-
 
 function displayBook() { 
     for (const choice of readChoices) {
