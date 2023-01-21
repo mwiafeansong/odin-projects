@@ -33,7 +33,7 @@ button {
 }
 
 .btn-icon img {
-    width: 25px;
+    width: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -208,7 +208,7 @@ main {
 
 .hamburger {
     position: fixed;
-    right: 5px;
+    right: 13px;
     top: 5px;
     visibility: hidden;
 }
