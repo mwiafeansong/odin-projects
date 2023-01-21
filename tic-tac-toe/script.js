@@ -27,46 +27,15 @@ const GameBoard = (function() {
 })();
 
 function player(marker) {
-    this.hasPlayed = false;
-    
-    const cellClicked = () => {
-        for (const cell of GameBoard.gridCells){
-            cell.addEventListener('click', (e) => {
-                let cellId = e.target.getAttribute('data-id');
-                
-                if (GameBoard.board[cellId] === undefined ) {
-                    GameBoard.addToBoard(cellId, marker);
-                    cell.textContent = marker;
-                    console.log(GameBoard.board)
-                }
-            })
-        }
-    }
-
-    const resetHasPlayed = () => {
-        this.hasPlayed = false;
-    }
-
-    return {cellClicked, resetHasPlayed}
-    
+     
 }
 
-const controlFlow = (function() {
-    const player1 = player('X');
-    const player2 = player('O');
-
+const GameController = (function() {
     
-
-    const game = () => {
-       currentPlayer.cellClicked();
-    }
-    
-    return {game};
 
 })();
 
 // const player3 = player('p');
-// player3.cellClicked();
 
 
 

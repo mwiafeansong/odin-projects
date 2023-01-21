@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do App</title>
+</head>
+<body>
+
+    <div class="backdrop"></div>
+    
+    <aside>
+        <div class="aside-head">
+            <h1>TO DO</h1>
+            <button class="btn-icon close-aside">
+                <img src="../src/images/close.svg" alt="">
+            </button>
+        </div>
+        <button class="add-project">Add Project</button>
+        <div class="current">
+            <h2>Home</h2>
+            <ul class="home-btns">
+                <li><button data-id="0" class="tablink first show">Today</button></li>
+                <li><button data-id="1" class="tablink second">This Week</button></li>
+                <li><button data-id="2" class="tablink third">Important</button></li>
+            </ul>
+        </div>
+        <div class="project-titles">
+            <h2>All Projects</h2>
+            <ul class="project-btns">
+                <!-- <li><button data-id="3" class="tablink project-btn">My Project</button></li> -->
+            </ul>
+        </div>
+    </aside>
+
+    <main>
+        
+        <form class="project-form">
+            <label>*Project Title:
+                <input type="text" id="project-title" name="Project Title" required>
+            </label>
+            <label>*Description:
+                <textarea id="project-description" name="Project Description" rows="10" required></textarea>
+            </label>
+            <div class="form-btns">
+                <button type="submit">Add</button>
+                <button type="button" class="cancel">Cancel</button>
+            </div>
+        </form>
+
+        <form class="project-form-edit">
+            <label>*Project Title:
+                <input type="text" id="project-title-edit" name="Project Title edited" required>
+            </label>
+            <label>*Description:
+                <textarea id="project-description-edit" name="Project Description edited" rows="10" required></textarea>
+            </label>
+            <div class="form-btns">
+                <button type="submit">Edit</button>
+                <button type="button" class="cancel">Cancel</button>
+            </div>
+        </form>
+
+        <form class="task-form">
+            <label>*Task Title:
+                <input type="text" id="task-title" name="Task Name" required>
+            </label>
+            <label>Description:
+                <textarea id="task-description" name="Task Description" rows="10"></textarea>
+            </label>
+            <label>Priority:
+                <select name="Priority" id="priority">
+                    <option value="Low" selected>Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                </select>
+            </label>
+            <label>Due Date:
+                <input type="date" id="due-date" name="Due Date">
+            </label>
+            <div class="form-btns">
+                <button type="submit">Add</button>
+                <button type="button" class="cancel">Cancel</button>
+            </div>
+        </form>
+
+        <form class="task-form-edit">
+            <label>*Task Title:
+                <input type="text" id="task-title-edit" name="Task Name" required>
+            </label>
+            <label>Description:
+                <textarea id="task-description-edit" name="Task Description" rows="10"></textarea>
+            </label>
+            <label>Priority:
+                <select name="Priority" id="priority-edit">
+                    <option value="Low" selected>Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                </select>
+            </label>
+            <label>Due Date:
+                <input type="date" id="due-date-edit" name="Due Date">
+            </label>
+            <div class="form-btns">
+                <button type="submit">Edit</button>
+                <button type="button" class="cancel">Cancel</button>
+            </div>
+        </form>
+
+        <button class="btn-icon hamburger">
+            <img class="hamburger-icon" src="../src/images/icon-hamburger.svg" alt="">
+        </button>
+        <section class="special-contents">
+            <div data-id="0" id="today" class="tab-content">
+                <h3>Today's Tasks</h3>
+                <div class="today-special">
+                    <p class="today-para">No tasks</p>
+                </div>
+            </div>
+            <div data-id="1" id="upcoming" class="tab-content">
+                <h3>This Week's Tasks</h3>
+                <div class="upcoming-special">
+                    <p class="upcoming-para">No tasks</p>
+                </div>
+            </div>
+            <div data-id="2" id="important" class="tab-content">
+                <h3>Important Tasks</h3>
+                <div class="important-special">
+                    <p class="important-para">No tasks</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-contents">
+            
+            <!-- <div data-id="3" id="myproject" class="tab-content">
+                <div class="project-head">
+                    <div class="title-addtask-delete">
+                        <h3 class="project-titled">My Project</h3>
+                        <button class="btn-icon plus-task">
+                            <img src="../src/images/plus.svg" alt="">
+                        </button>
+                        <button data-id="3" class="btn-icon">
+                            <img class="edit-icon" src="../src/images/file-edit-outline.svg" alt="">
+                        </button>
+                        <button data-id="3" class="btn-icon">
+                            <img class="delete-icon" src="../src/images/trash-can-outline.svg" alt="">
+                        </button>
+                    </div>
+                    <p class="project-described">This is the default project</p>
+                </div>
+                <div data-id="3" class="project-body for-default-project"> -->
+                    <!-- <div data-id="0" class="task">
+                        <div class="task-head">
+                            <input type="checkbox">
+                            <h4 class="task-titled unchecked">Exercise</h4>
+                            <button class="expand-icon">
+                                <img src="../src/images/icon-arrow-down.svg" alt="expand and collapse task details">
+                            </button>
+                        </div>
+                        <div class="task-details">
+                            <p class="task-described">Go to the gym and get healthy</p>
+                            <p >Priority: <button class="priority Medium">Medium</button></p>
+                            <p>Due date: <span>24/01/23</span></p>
+                            <div class="task-btns">
+                                <button data-id="0" class="btn-in-main edit">Edit</button>
+                                <button data-id="0" class="btn-in-main delete">Delete</button>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>
