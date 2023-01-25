@@ -13,14 +13,14 @@ const taskDueDateEdit = document.querySelector('#due-date-edit');
 export function showForm(formType) {
     backDrop.classList.add('show');
     formType.style.visibility = 'visible';
-    aside.style.backgroundColor = 'rgba(0, 0, 0, 0.1)';
+    // aside.style.backgroundColor = 'rgba(0, 0, 0, 0.1)';
     aside.style.pointerEvents = 'none';
 }
 
 export function removeForm(formType) {
     backDrop.classList.remove('show');
     formType.style.visibility = 'hidden';
-    aside.style.backgroundColor = '#eee';
+    // aside.style.backgroundColor = '#eee';
     aside.style.pointerEvents = 'all';
 }
 

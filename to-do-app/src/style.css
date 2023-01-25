@@ -234,8 +234,20 @@ main {
 
 /* SPECIAL SECTION */
 .special-contents h3 {
-    font-size: 1.5rem;
-    color: #444;
+    font-size: 1.55rem;
+    text-shadow: 1px 1px 5px #bbb;
+}
+
+#today h3 {
+    color: #0c0;  
+}
+
+#upcoming h3 {
+    color: #cc0;
+}
+
+#important h3 {
+    color: #f22;
 }
 
 .today-para,
@@ -379,10 +391,19 @@ main {
 
 
 @media screen and (max-width: 580px) {
+
+    .backdrop {
+        z-index: 2;
+    }
+
     aside {
         position: absolute;
         width: 80%;
         box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.2);
+        transform: translateX(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: transform .3s ease;
     }
 
     .close-aside {
@@ -397,9 +418,10 @@ main {
         visibility: visible;
     }
 
-    .hide {
-        padding: 0;
-        width: 0;
+    .display {
+        opacity: 1;
+        transform: translateX(0%);
+        visibility: visible;
     }
 }
 

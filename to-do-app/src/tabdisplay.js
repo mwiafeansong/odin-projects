@@ -1,4 +1,6 @@
 const aside = document.querySelector('aside');
+const specials = document.querySelector('.special-contents');
+const projectsContainer = document.querySelector('.project-contents');
 
 export function openPage(page, element) {
     let tabContents = document.querySelectorAll('.tab-content');
@@ -35,9 +37,13 @@ export default function displayPage() {
 }
 
 export function displaySidebar() {
-    aside.classList.remove('hide');
+    aside.classList.add('display');
+    specials.style.pointerEvents = 'none';
+    projectsContainer.style.pointerEvents = 'none';
 }
 
 export function removeSidebar() {
-    aside.classList.add('hide')
+    aside.classList.remove('display');
+    specials.style.pointerEvents = 'all';
+    projectsContainer.style.pointerEvents = 'all';
 }
