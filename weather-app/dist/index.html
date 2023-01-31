@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Weather</title>
+</head>
+<body>
+
+        <header>
+            <div class="container head">
+                <div class="logo">
+                    <img src="../src/images/cloudy.png" alt="logo">
+                    <h1>Open Weather</h1>
+                </div>
+                <div class="temps">
+                    <button class="temp-btn celsius show">&#8451</button>
+                    <button class="temp-btn fahrenheit">&#8457</button>
+                </div> 
+            </div>
+        </header>
+
+        <main class="container">
+            <form action="">
+                <input class="location" type="text" placeholder="Enter City">
+                <button type="submit">Search</button>
+            </form>
+
+            <div class="loc">
+                <div class="loc-details">
+                    <img class="icon" src="">
+                    <p class="loc-temp"></p>
+                    <p class="weather-description"></p>
+                    <p class="place"></p>
+                    <p class="date-time"></p>
+                </div>
+                <div class="loc-weather">
+                    <p class="feels-like"></p>
+                    <p class="humidity"></p>
+                    <p class="cloudiness"></p>
+                    <p class="wind-speed"></p>
+                </div>
+            </div>
+
+            <div class="modal invisible">Loading...</div>
+        </main>
+        
+        <footer>Created by mwiafeansong for <a href="theodinproject.com">The Odin Project</a></footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
