@@ -21,7 +21,6 @@ async function getWeatherParams(location, units) {
 
     //add the laoding modal
     modal.classList.remove('invisible');
-    modal.classList.add('visible');
     
     let data = await getWeather(url);
     let end = new Date().getTime();
@@ -29,11 +28,12 @@ async function getWeatherParams(location, units) {
     //get duration taken to fetch the data
     let durationInSeconds = (end - start) / 1000;
 
-    //display details on page
-    fillParams(data, units);
+    //display details on page if fetch didn't throw an error
+    if (data !== null) {
+        fillParams(data, units);
+    } 
 
     //remove the loading modal
-    modal.classList.remove('visible');
     modal.classList.add('invisible');
 
     //display the weather parameters
@@ -66,7 +66,7 @@ for (const btn of tempBtns) {
         activeBtnColor(e.target);
 
         //fetch and dsiplay the weather parameters with the new unit provided
-        getWeatherParams(location, unit);
+        if (location !== undefined) getWeatherParams(location, unit);  
     })
 }
 

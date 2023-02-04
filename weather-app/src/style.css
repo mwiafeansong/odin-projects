@@ -144,10 +144,6 @@ button[type="submit"] {
     text-align: center;
 }
 
-.visible {
-    display: block;
-}
-
 .invisible {
     display: none;
 }
