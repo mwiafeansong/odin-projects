@@ -90,8 +90,8 @@ const GameController = (function () {
 
       name.addEventListener('keypress', (e) => {
         if (e.keyCode === 13) {
-          e.preventDefault();
-          document.querySelector('.enter').click();
+          //e.preventDefault();
+          //document.querySelector('.enter').click();
           name.setAttribute('contenteditable', false);
           if (name.classList.contains('player1-name')) {
             name.style.color = '#005254';
@@ -145,7 +145,7 @@ const GameController = (function () {
       hightlightWinCells(GameBoard.winningCombos);
 
       if (player1Score < 5 && player2Score < 5) {
-        setTimeout(clear, 1000);
+        setTimeout(clear, 2000);
       }
 
       if (player1Score === 5 || player2Score === 5) {
@@ -227,6 +227,8 @@ const GameController = (function () {
       gameStatus.textContent = 'Tie!';
       player1Score++;
       player2Score++;
+      oneScore.textContent = player1Score;
+      twoScore.textContent = player2Score;
     }
   }
 
