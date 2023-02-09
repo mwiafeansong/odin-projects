@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #725483;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background-color: #442858;
+  padding: 8px 0;
+}
+
+h1 {
+  font-size: 3rem;
+  text-align: center;
+  color: #ddd;
+  letter-spacing: 1px;
+}
+
+/* MAIN */
+main {
+  text-align: center;
+}
+
+.game-status {
+  color: #ddd;
+  background-color: #5d3a6f;
+  max-width: 300px;
+  margin: 20px auto;
+  padding: 10px;
+  min-height: 60px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', Arial, sans-serif;
+}
+
+.buttons button {
+  cursor: pointer;
+  background-color: #ddd;
+  padding: 5px 10px;
+  font-size: 90%;
+  width: 90px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.grids {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.grids h2 {
+  font-size: 1.8rem;
+  color: #ddd;
+  letter-spacing: 1px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  width: 350px;
+  height: 350px;
+  background-color: #fff;
+}
+
+.grid-item {
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+/* FOOTER */
+
+footer {
+  margin-bottom: 0;
+  margin-top: 50px;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.8rem;
+  color: #fff;
+  background-color: #aa98b5;
+  padding: 3px 0;
+}
+
+footer a {
+  cursor: pointer;
+}
