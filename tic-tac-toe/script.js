@@ -90,6 +90,8 @@ const GameController = (function () {
 
       name.addEventListener('keypress', (e) => {
         if (e.keyCode === 13) {
+          e.preventDefault();
+          document.querySelector('.enter').click();
           name.setAttribute('contenteditable', false);
           if (name.classList.contains('player1-name')) {
             name.style.color = '#005254';

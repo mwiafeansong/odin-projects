@@ -218,3 +218,7 @@ footer {
     transform: scale(50%, 50%);
   }
 }
+
+.enter {
+  display: none;
+}
