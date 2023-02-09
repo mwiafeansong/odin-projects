@@ -68,6 +68,8 @@ function player(marker) {
 const GameController = (function () {
   const gameStatus = document.querySelector('.game-status');
   const playerNames = document.querySelectorAll('.player-name');
+  const oneScore = document.querySelector('.player1-score');
+  const twoScore = document.querySelector('.player2-score');
   let winnerMarker;
   let running = true;
   let wrongPlay = false;
@@ -75,6 +77,9 @@ const GameController = (function () {
   let player1 = player('X');
   let player2 = player('O');
   let currentPlayer;
+
+  let player1Score = 0;
+  let player2Score = 0;
 
   function getNamesAndStart() {
     for (const name of playerNames) {
@@ -101,6 +106,10 @@ const GameController = (function () {
 
   function startGame() {
     GameBoard.renderBoard();
+
+    setTimeout(function () {
+      gameStatus.textContent = 'Players, Enter Your Names';
+    }, 3000);
 
     getNamesAndStart();
   }
@@ -132,6 +141,14 @@ const GameController = (function () {
       running = false; //the game has ended
       displayWinner(winnerMarker);
       hightlightWinCells(GameBoard.winningCombos);
+
+      if (player1Score < 5 && player2Score < 5) {
+        setTimeout(clear, 1000);
+      }
+
+      if (player1Score === 5 || player2Score === 5) {
+        displayOverallWinner();
+      }
     }
   }
 
@@ -194,14 +211,25 @@ const GameController = (function () {
   }
 
   function displayWinner(winnerMarker) {
-    gameStatus.classList.add('victory');
     if (winnerMarker === 'X') {
-      gameStatus.textContent = `${player1.name} Wins!`;
+      player1Score++;
+      oneScore.textContent = player1Score;
+      if (player1Score === 5) gameStatus.textContent = `${player1.name} Wins!`;
+      else gameStatus.textContent = `Point, ${player1.name}!`;
     } else if (winnerMarker === 'O') {
-      gameStatus.textContent = `${player2.name} Wins!`;
+      player2Score++;
+      twoScore.textContent = player2Score;
+      if (player1Score === 5) gameStatus.textContent = `${player2.name} Wins!`;
+      else gameStatus.textContent = `Point, ${player2.name}!`;
     } else {
       gameStatus.textContent = 'Tie!';
+      player1Score++;
+      player2Score++;
     }
+  }
+
+  function displayOverallWinner() {
+    gameStatus.classList.add('overall-victory');
   }
 
   function hightlightWinCells(winningCombos) {
@@ -226,6 +254,16 @@ const GameController = (function () {
   }
 
   function restartGame() {
+    clear();
+
+    player1Score = 0;
+    player2Score = 0;
+    oneScore.textContent = '0';
+    twoScore.textContent = '0';
+    gameStatus.classList.remove('overall-victory');
+  }
+
+  function clear() {
     winnerMarker = undefined;
     running = true;
     playCount = 0;
@@ -246,9 +284,6 @@ const GameController = (function () {
         cell.classList.remove('mark2');
       }
     }
-
-    // announce who the next player is
-    gameStatus.classList.remove('victory');
 
     if (player1.name === '' && player2.name === '') {
       gameStatus.textContent = 'Players, Enter Your Names';

@@ -71,7 +71,7 @@ main h2 {
   align-items: center;
   max-width: 350px;
   width: 95%;
-  margin: 30px auto 20px;
+  margin: 30px auto 10px;
   background-color: #fff;
   text-align: start;
   position: relative;
@@ -102,14 +102,6 @@ main h2 {
   color: #ccc;
   border-bottom: 1px solid #ccc;
 }
-
-/* .player1 p {
-  color: var(--player1-color);
-}
-
-.player2 p {
-  color: var(--player2-color);
-} */
 
 .player-mark {
   padding: 12px 0;
@@ -152,6 +144,14 @@ main h2 {
   background-color: var(--player2-color);
 }
 
+.player-scores {
+  display: flex;
+  font-size: 2.5rem;
+  justify-content: center;
+  margin-bottom: 10px;
+  gap: 5px;
+}
+
 .restart {
   padding: 8px 20px;
   width: 100px;
@@ -180,6 +180,12 @@ footer {
   color: #9cff00;
 }
 
+.overall-victory {
+  font-size: 2rem;
+  color: #9cff00;
+  animation: scale-up 0.8s linear infinite;
+}
+
 .cell-victory {
   background-color: #9cff00;
   animation: animate 0.8s linear infinite;
@@ -196,5 +202,19 @@ footer {
 
   100% {
     opacity: 0.2;
+  }
+}
+
+@keyframes scale-up {
+  0% {
+    transform: scale(50%, 50%);
+  }
+
+  50% {
+    transform: scale(120%, 120%);
+  }
+
+  100% {
+    transform: scale(50%, 50%);
   }
 }
