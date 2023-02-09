@@ -75,7 +75,7 @@ main h2 {
   background-color: #fff;
   text-align: start;
   position: relative;
-  height: 52px;
+  min-height: 52px;
 }
 
 .player {

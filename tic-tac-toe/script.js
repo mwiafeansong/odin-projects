@@ -81,6 +81,12 @@ const GameController = (function () {
   let player1Score = 0;
   let player2Score = 0;
 
+  // document.addEventListener('keypress', (e) => {
+  //   if (e.keyCode === 13 || e.which === 13) {
+  //     e.preventDefault();
+  //   }
+  // });
+
   function getNamesAndStart() {
     for (const name of playerNames) {
       name.addEventListener('click', () => {
