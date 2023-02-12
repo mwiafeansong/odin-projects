@@ -33,25 +33,16 @@
       <div class="players">
         <div class="player player1">
           <div class="player-mark">X</div>
-          <div class="player-details">
-            <h3>Player 1</h3>
-            <form>
-              <p contenteditable="true" class="player-name player1-name">
-                Name
-              </p>
-            </form>
-            <!-- <button class="enter" type="submit">Enter</button> -->
-          </div>
+          <form class="player-details">
+            <label for="player1-name">Player1</label>
+            <input class="player-name" id="player1-name" value="Name" />
+          </form>
         </div>
         <div class="player player2">
-          <div class="player-details">
-            <h3>Player 2</h3>
-            <form>
-              <p contenteditable="true" class="player-name player2-name">
-                Name
-              </p>
-            </form>
-          </div>
+          <form class="player-details">
+            <label for="player2-name">Player 2</label>
+            <input class="player-name" id="player2-name" value="Name" />
+          </form>
           <div class="player-mark">O</div>
         </div>
       </div>

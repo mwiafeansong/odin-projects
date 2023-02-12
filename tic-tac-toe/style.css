@@ -86,19 +86,22 @@ main h2 {
   height: 100%;
 }
 
-.player h3 {
+.player label {
   font-size: 1rem;
   color: #888;
+  font-family: inherit;
 }
 
-.player p {
+.player input {
   font-size: 1.2rem;
   font-weight: bold;
   border: none;
   outline: none;
+  color: #999;
+  font-family: inherit;
 }
 
-.player p:focus {
+.player input:focus {
   color: #ccc;
   border-bottom: 1px solid #ccc;
 }

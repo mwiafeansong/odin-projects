@@ -81,33 +81,27 @@ const GameController = (function () {
   let player1Score = 0;
   let player2Score = 0;
 
-  // document.addEventListener('keypress', (e) => {
-  //   if (e.keyCode === 13 || e.which === 13) {
-  //     e.preventDefault();
-  //   }
-  // });
-
   function getNamesAndStart() {
     for (const name of playerNames) {
-      name.addEventListener('click', () => {
-        name.setAttribute('contenteditable', true);
-        if (name.innerText === 'Name') name.textContent = '';
+      name.addEventListener('focus', () => {
+        if (name.value === 'Name') name.value = '';
       });
 
       name.addEventListener('keypress', (e) => {
         if (e.keyCode === 13) {
-          //e.preventDefault();
-          //document.querySelector('.enter').click();
-          name.setAttribute('contenteditable', false);
-          if (name.classList.contains('player1-name')) {
+          e.preventDefault();
+          if (name.id === 'player1-name') {
             name.style.color = '#005254';
-            player1.name = utils.capitalize(name.innerText);
+            player1.name = utils.capitalize(name.value);
+            name.readOnly = true;
           } else {
             name.style.color = '#cc2';
-            player2.name = utils.capitalize(name.innerText);
+            player2.name = utils.capitalize(name.value);
+            name.readOnly = true;
           }
+
+          start(player1);
         }
-        start();
       });
     }
   }
@@ -122,14 +116,14 @@ const GameController = (function () {
     getNamesAndStart();
   }
 
-  function start() {
+  function start(currentPlayer) {
     if (player1.name !== '' && player2.name !== '') {
       for (const cell of GameBoard.gridCells) {
         cell.addEventListener('click', (e) => {
           GameController.playRound(e);
         });
       }
-      gameStatus.textContent = `${player1.name}'s turn`;
+      gameStatus.textContent = `${currentPlayer.name}'s turn`;
     }
   }
 
@@ -265,6 +259,10 @@ const GameController = (function () {
 
   function restartGame() {
     clear();
+
+    for (const name of playerNames) {
+      name.readOnly = false;
+    }
 
     player1Score = 0;
     player2Score = 0;
