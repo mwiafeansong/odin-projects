@@ -260,10 +260,6 @@ const GameController = (function () {
   function restartGame() {
     clear();
 
-    for (const name of playerNames) {
-      name.readOnly = false;
-    }
-
     player1Score = 0;
     player2Score = 0;
     oneScore.textContent = '0';
